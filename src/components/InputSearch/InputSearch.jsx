@@ -1,8 +1,9 @@
+import { Input, Title} from './InputSearch.styled';
 export const InputSearch = ({ onChange }) => {
   return (
     <>
-      <p>Enter your search value</p>
-      <input type="text" onChange={onChange} />
+      <Title>Enter your search value</Title>
+      <Input type="text" onChange={onChange} />
     </>
   );
 };

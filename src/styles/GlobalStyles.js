@@ -1,6 +1,11 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyleComponent = createGlobalStyle`
+body {
+  height: 100vh;
+  color:${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.dark};
+}
   img {
     display: block;
     max-width: 100%;

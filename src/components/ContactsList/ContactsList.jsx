@@ -1,17 +1,20 @@
+import { Title, List, Item, Contact, Button, Warning } from "./ContactsList.styled";
+
 export const ContactsList = ({ contacts, deleteContact }) => {
   return (
     <>
-      <h2>Contacts</h2>
-      { contacts.length ? <ul>
+      <Title>Contacts 📃</Title>
+      { contacts.length ? <List>
         {contacts.map(({ id, name, number }) => {
           return (
-            <li key={id}>
-              {name} {number}
-              <button onClick={() =>deleteContact(id)}type="button">Delete contact</button>
-            </li>
+            <Item key={id}>
+              <Contact>{name} {number}</Contact>
+              
+              <Button onClick={() =>deleteContact(id)}type="button">❌</Button>
+            </Item>
           );
         })}
-      </ul> : 'No results..' }
+      </List> : <Warning>No results...</Warning> }
     </>
   );
 };

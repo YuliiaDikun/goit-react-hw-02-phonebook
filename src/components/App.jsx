@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import { GlobalStyleComponent } from 'styles/GlobalStyles';
 import { theme } from 'styles/theme';
 
+import { Container } from './Container/Container.styled';
 import { Title } from './Title/Title';
 import { LoginForm } from './Form/Form';
 import { ContactsList } from './ContactsList/ContactsList';
@@ -39,13 +40,15 @@ export class App extends Component {
 const contactsToMarkUp = this.filterContacts()
     return (
       <ThemeProvider theme={theme}>
-        <Title />
+        <Container>
+          <Title />
         <LoginForm onAddContact={this.addContact} />
         
         <InputSearch
           onChange={e => this.setState({ filter: e.target.value })}
         />
         <ContactsList contacts={contactsToMarkUp} deleteContact={this.deleteContact } />
+        </Container>
 
         <GlobalStyleComponent />
       </ThemeProvider>

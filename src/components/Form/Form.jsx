@@ -1,9 +1,11 @@
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik,Form, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import { nanoid } from 'nanoid';
 
+import { Label, Input, Wrapper, ErrorMess, Button } from './Forms.styled';
+
 const FormError = ({ name }) => {
-  return <ErrorMessage name={name} render={message => <p>{message}</p>} />;
+  return <ErrorMessage name={name} render={message => <ErrorMess>{message}</ErrorMess>} />;
 };
 
 const initialValues = {
@@ -42,20 +44,26 @@ export const LoginForm = ({ onAddContact }) => {
       onSubmit={handleSubmit}
     >
       <Form autoComplete="off">
-        <label htmlFor="name">
+        <Wrapper>
+           
+          <Input key={nanoid()} type="text" name="name" id="name" placeholder=' ' />
+          <Label htmlFor="name">
           {' '}
-          Name
-          <Field key={nanoid()} type="text" name="name" id="name" />
+          Name          
+          </Label>
           <FormError name="name" />
-        </label>
-        <label htmlFor="number">
+       </Wrapper>
+        <Wrapper>
+          
+          <Input key={nanoid()} type="tel" name="number" id="number" placeholder=' ' />
+          <Label htmlFor="number">
           {' '}
-          Number
-          <Field key={nanoid()} type="tel" name="number" id="number" />
+          Number          
+          </Label>
           <FormError name="number" />
-        </label>
+        </Wrapper>
 
-        <button type="submit">Add contact</button>
+        <Wrapper><Button type="submit">Add contact</Button></Wrapper>
       </Form>
     </Formik>
   );

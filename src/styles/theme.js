@@ -1,10 +1,10 @@
 export const theme = Object.freeze({
   colors: {
-    accent: '#2196F3',
+    accent: '#002D62',
     white: '#ffffff',
-    grey: '#9e9e9e',
-    light: '#f2f2f2',
-    dark: '#212121',
+    grey: '#6699CC',
+    light: '#A3C1AD',
+    dark: '#002244',
     mainBackground: ['linear-gradient(to bottom, #c9d6ff,  #e2e2e2)'],
     tagBackground: ['linear-gradient(to bottom, #FFD194, #D1913C)'],
   },

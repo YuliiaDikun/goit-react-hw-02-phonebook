@@ -1,3 +1,4 @@
+import { TitleHead } from "./Title.styled"
 export const Title = () => { 
-    return <h1>Phonebook</h1>
+    return <TitleHead>Phonebook 📞</TitleHead>
 }
