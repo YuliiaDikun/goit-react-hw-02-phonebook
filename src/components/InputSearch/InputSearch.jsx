@@ -1,4 +1,5 @@
-import { Input, Title} from './InputSearch.styled';
+import PropTypes from 'prop-types';
+import { Input, Title } from './InputSearch.styled';
 export const InputSearch = ({ onChange }) => {
   return (
     <>
@@ -6,4 +7,8 @@ export const InputSearch = ({ onChange }) => {
       <Input type="text" onChange={onChange} />
     </>
   );
+};
+
+InputSearch.propTypes = {
+  onChange: PropTypes.func,
 };

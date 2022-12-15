@@ -41,7 +41,7 @@ const contactsToMarkUp = this.filterContacts()
     return (
       <ThemeProvider theme={theme}>
         <Container>
-          <Title />
+        <Title />
         <LoginForm onAddContact={this.addContact} />
         
         <InputSearch

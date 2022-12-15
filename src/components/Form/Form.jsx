@@ -1,11 +1,17 @@
-import { Formik,Form, ErrorMessage } from 'formik';
+import { Formik, Form, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import { nanoid } from 'nanoid';
+import PropTypes from 'prop-types';
 
 import { Label, Input, Wrapper, ErrorMess, Button } from './Forms.styled';
 
 const FormError = ({ name }) => {
-  return <ErrorMessage name={name} render={message => <ErrorMess>{message}</ErrorMess>} />;
+  return (
+    <ErrorMessage
+      name={name}
+      render={message => <ErrorMess>{message}</ErrorMess>}
+    />
+  );
 };
 
 const initialValues = {
@@ -45,26 +51,36 @@ export const LoginForm = ({ onAddContact }) => {
     >
       <Form autoComplete="off">
         <Wrapper>
-           
-          <Input key={nanoid()} type="text" name="name" id="name" placeholder=' ' />
-          <Label htmlFor="name">
-          {' '}
-          Name          
-          </Label>
+          <Input
+            key={nanoid()}
+            type="text"
+            name="name"
+            id="name"
+            placeholder=" "
+          />
+          <Label htmlFor="name"> Name</Label>
           <FormError name="name" />
-       </Wrapper>
+        </Wrapper>
         <Wrapper>
-          
-          <Input key={nanoid()} type="tel" name="number" id="number" placeholder=' ' />
-          <Label htmlFor="number">
-          {' '}
-          Number          
-          </Label>
+          <Input
+            key={nanoid()}
+            type="tel"
+            name="number"
+            id="number"
+            placeholder=" "
+          />
+          <Label htmlFor="number"> Number</Label>
           <FormError name="number" />
         </Wrapper>
 
-        <Wrapper><Button type="submit">Add contact</Button></Wrapper>
+        <Wrapper>
+          <Button type="submit">Add contact</Button>
+        </Wrapper>
       </Form>
     </Formik>
   );
+};
+
+LoginForm.propTypes = {
+  onAddContact: PropTypes.func,
 };
